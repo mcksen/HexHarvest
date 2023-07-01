@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 20.0f;
-    public float horizontalInput;
+    
+    [SerializeField] float xRange = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +16,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Setting up input
-        horizontalInput = Input.GetAxis("Horizontal");
-      
-        
-        //Move the witch left and right
-        transform.Translate(Vector3.forward * Time.deltaTime * speed* horizontalInput);
+       if (transform.position.x < -xRange)
+        {
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > xRange)
+        {
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+
+
+
+
     }
-    
+
 }
