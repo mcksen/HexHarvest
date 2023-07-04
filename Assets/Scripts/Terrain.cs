@@ -6,32 +6,40 @@ namespace Ksen {
 
     public class Terrain : MonoBehaviour
     {
-        private float terrainWidth = 50;
-        private float terrainHeight = 50;
-        // Start is called before the first frame update
-        void Start()
-        {
+        
+        [SerializeField] private Transform model;
+        [SerializeField] private SpawnRandomObjects villageSpawn;
+      
 
+        // Start is called before the first frame update
+        void Awake()
+        {
+            Rebuild();
         }
+
+
         public float GetTerrainSize(string side)
         {
             float size = 0;
             if (side == "w")
             {
-                size = terrainWidth;
+                size = model.localScale.x;
             }
             if (side == "h")
             {
-                size = terrainHeight;
+                size = model.localScale.y;
             }
             return size;
         }
 
-
+        public void Rebuild()
+        {
+            villageSpawn.SpawnObjects();
+        }
         // Update is called once per frame
         void Update()
         {
-
+            
         }
     }
 }

@@ -5,47 +5,46 @@ using Terrain = Ksen.Terrain;
 
 public class ThreadmillTerrainManager : MonoBehaviour
 {
-    [SerializeField] Terrain singleTerrain;
+    [SerializeField] private Terrain singleTerrain;
+ 
+    [SerializeField] private int terrainQuantity;
+
     private List<Terrain> terrainThreadMillList;
     private float gap;
     private float terrainHeight;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        terrainHeight = singleTerrain.GetTerrainSize("h");
-               
-        terrainThreadMillList = SpawnTerrains();
         gap = 0;
-        foreach (Terrain t in terrainThreadMillList)
-        {
-           
-            t.transform.position = new Vector3(t.transform.position.x, t.transform.position.y, gap);
-            gap += terrainHeight;
-        }
+        terrainHeight = singleTerrain.GetTerrainSize("h");
+         
+        terrainThreadMillList = SpawnTerrains();
+       
     }
 
     public List<Terrain> SpawnTerrains()
     {
-        List<Terrain> terrainList = new List<Terrain>();
-        for (int i = 0; i < 4; i++)
+         List<Terrain> terrainList = new List<Terrain>();
+        for (int i = 0; i < terrainQuantity; i++)
         {
-            singleTerrain = Instantiate(singleTerrain, new Vector3(0, 0, 0), transform.rotation);
-            
-            terrainList.Add(singleTerrain);
+           Terrain instance = Instantiate(singleTerrain, new Vector3(transform.position.x,transform.position.y, gap), transform.rotation);
+            gap += terrainHeight;
+            terrainList.Add(instance);
         }
         return terrainList;
 
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         foreach (Terrain t in terrainThreadMillList)
         {
             if (t.transform.position.z<=-terrainHeight)
 
              {
-                t.transform.position = new Vector3(t.transform.position.x, t.transform.position.y, 3f * terrainHeight);
+                t.transform.position = new Vector3(t.transform.position.x, t.transform.position.y, (terrainQuantity-1) * terrainHeight);
+                t.Rebuild();
+
              }
-        }
-    }
+        }    }
 }

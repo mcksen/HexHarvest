@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4516723274469598547}
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.8}
-  m_LocalScale: {x: 50, y: 50.000023, z: 1}
+  m_LocalPosition: {x: 25, y: 0, z: 25}
+  m_LocalScale: {x: 50, y: 50, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7559799088469626874}
@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 7559799088469626874}
   - component: {fileID: 1276535280668419564}
   - component: {fileID: 8160861598383191506}
+  - component: {fileID: 3692012144943026451}
   m_Layer: 0
   m_Name: Thread mill Terrain
   m_TagString: Untagged
@@ -131,15 +132,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8860927064188322020}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.36498916, y: -4.163826, z: -1.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2128922267417471257}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1276535280668419564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +166,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fd58630e3ca3a428169c8c03b79773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 2128922267417471257}
+  villageSpawn: {fileID: 3692012144943026451}
+--- !u!114 &3692012144943026451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860927064188322020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbe378ed669f1d48ade4a4f44a03bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objecttoSpawn: {fileID: 3234851168001638421, guid: c2f2f087e0d9a9f4e8c43287daa80d0a, type: 3}
+  xRange: -50
+  zRange: -50
+  position: {x: 0, y: 0, z: 0}
+  maxSpawnQuantity: 7
+  minSpawnQuantity: 2
+  timespan: 5
