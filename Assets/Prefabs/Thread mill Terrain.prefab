@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 1276535280668419564}
   - component: {fileID: 8160861598383191506}
   - component: {fileID: 3692012144943026451}
+  - component: {fileID: 5124805125970937648}
   m_Layer: 0
   m_Name: Thread mill Terrain
   m_TagString: Untagged
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 2128922267417471257}
   villageSpawn: {fileID: 3692012144943026451}
+  priestSpawn: {fileID: 5124805125970937648}
 --- !u!114 &3692012144943026451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,9 +183,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objecttoSpawn: {fileID: 3234851168001638421, guid: c2f2f087e0d9a9f4e8c43287daa80d0a, type: 3}
-  xRange: -50
-  zRange: -50
+  xRange: -45
+  zRange: -45
   position: {x: 0, y: 0, z: 0}
   maxSpawnQuantity: 7
   minSpawnQuantity: 2
-  timespan: 5
+  gap: 8
+  timespan: 20
+--- !u!114 &5124805125970937648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860927064188322020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbe378ed669f1d48ade4a4f44a03bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objecttoSpawn: {fileID: 751458796657743715, guid: 37f8b79523479f14884d285ef32d100f, type: 3}
+  xRange: -45
+  zRange: -45
+  position: {x: 0, y: 0, z: 0}
+  maxSpawnQuantity: 5
+  minSpawnQuantity: 1
+  gap: 5
+  timespan: 15

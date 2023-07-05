@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Ksen {
+namespace Ksen
+{
 
     public class Terrain : MonoBehaviour
     {
-        
+
         [SerializeField] private Transform model;
         [SerializeField] private SpawnRandomObjects villageSpawn;
-      
+        [SerializeField] private SpawnRandomObjects priestSpawn;
+
 
         // Start is called before the first frame update
         void Awake()
@@ -35,11 +37,12 @@ namespace Ksen {
         public void Rebuild()
         {
             villageSpawn.SpawnObjects();
+            priestSpawn.SpawnObjects();
         }
         // Update is called once per frame
         void Update()
         {
-            
+
         }
     }
 }
