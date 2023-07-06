@@ -8,11 +8,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float xRangeMin;
     [SerializeField] float xRangeMax;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+   private void OnTriggerEnter (Collider other)
+   {
+        Debug.Log ("enter");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        {
+          //player gets damage
+        }
+        else
+        {
+          if (Input.GetKeyDown.KeyCode.Space)
+          {
+            
+          }
+        }
+   }
+     private void OnTriggerStay (Collider other)
+   {
+        Debug.Log ("stay");
+   }
+     private void OnTriggerExit (Collider other)
+   {
+        Debug.Log ("exit");
+   }
 
     // Update is called once per frame
     void Update()
@@ -26,7 +44,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRangeMax, transform.position.y, transform.position.z);
         }
 
-
+            
 
 
     }

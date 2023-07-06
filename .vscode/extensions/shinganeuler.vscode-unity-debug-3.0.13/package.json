@@ -1,0 +1,229 @@
+{
+	"name": "vscode-unity-debug",
+	"displayName": "VSCode Unity Debugger",
+	"version": "3.0.13",
+	"publisher": "shinganEuler",
+	"description": "Unity debugger extension",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.47.x"
+	},
+	"preview": true,
+	"extensionDependencies": [
+		"ms-dotnettools.csharp"
+	],
+	"devDependencies": {
+		"@types/vscode": "^1.47.0",
+		"ts-loader": "5.3.3",
+		"vscode-debugprotocol": "^1.42.0",
+		"webpack": "^5.24.3",
+		"webpack-cli": "^4.5.0"
+	},
+	"dependencies": {
+		"@types/node": "^14.14.7",
+		"make": "^0.0.0",
+		"npm": "^7.0.10",
+		"vscode-nls": "^5.0.0"
+	},
+	"categories": [
+		"Debuggers"
+	],
+	"keywords": [
+		"unity",
+		"unity3d",
+		"csharp",
+		"debugger",
+		"debug"
+	],
+	"homepage": "https://github.com/Unity-Technologies/vscode-unity-debug",
+	"bugs": {
+		"url": "https://github.com/Unity-Technologies/vscode-unity-debug/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shinganEuler/vscode-unity-debug.git"
+	},
+	"icon": "Images/dark/Unity.png",
+	"main": "./dist/extension",
+	"scripts": {
+		"vscode:prepublish": "make build && webpack --mode production",
+		"webpack-dev": "webpack --mode development --watch",
+		"webpack": "webpack --mode development",
+		"prepare": "make build",
+		"compile": "make build",
+		"compileDev": "make build && tsc -p ./typescript && webpack --mode development",
+		"watch": "tsc -w -p ./src/typescript"
+	},
+	"activationEvents": [
+		"onCommand:attach.attachToDebugger",
+		"onCommand:exceptions.addEntry",
+		"onCommand:exceptions.always",
+		"onCommand:exceptions.never",
+		"onView:exceptions",
+		"onDebug"
+	],
+	"contributes": {
+		"breakpoints": [
+			{
+				"language": "csharp"
+			}
+		],
+		"commands": [
+			{
+				"command": "attach.attachToDebugger",
+				"title": "Unity Attach Debugger"
+			},
+			{
+				"command": "exceptions.addEntry",
+				"title": "Add",
+				"icon": {
+					"dark": "Images/dark/stage.svg",
+					"light": "Images/light/stage.svg"
+				}
+			},
+			{
+				"command": "exceptions.always",
+				"title": "Always"
+			},
+			{
+				"command": "exceptions.never",
+				"title": "Never"
+			}
+		],
+		"views": {
+			"debug": [
+				{
+					"id": "exceptions",
+					"name": "Exception Breakpoints"
+				}
+			]
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "exceptions.addEntry",
+					"when": "view == exceptions",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "exceptions.always",
+					"when": "view == exceptions && viewItem == exception"
+				},
+				{
+					"command": "exceptions.never",
+					"when": "view == exceptions && viewItem == exception"
+				}
+			]
+		},
+		"debuggers": [
+			{
+				"type": "unity",
+				"label": "Unity Debugger",
+				"program": "./bin/UnityDebug.exe",
+				"osx": {
+					"runtime": "mono"
+				},
+				"linux": {
+					"runtime": "mono"
+				},
+				"configurationAttributes": {
+					"launch": {
+						"properties": {
+							"path": {
+								"type": "string",
+								"description": "Used for attaching to Unity Editor when multiple instances are running"
+							}
+						}
+					}
+				},
+				"configurationSnippets": [
+					{
+						"label": "Unity Debug: Unity Editor",
+						"body": {
+							"name": "Unity Editor",
+							"type": "unity",
+							"path": "^\"\\${workspaceFolder}/Library/EditorInstance.json\"",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: Windows Player",
+						"body": {
+							"name": "Windows Player",
+							"type": "unity",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: OSX Player",
+						"body": {
+							"name": "OSX Player",
+							"type": "unity",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: Linux Player",
+						"body": {
+							"name": "Linux Player",
+							"type": "unity",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: iOS Player",
+						"body": {
+							"name": "iOS Player",
+							"type": "unity",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: Android Player",
+						"body": {
+							"name": "Android Player",
+							"type": "unity",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: Xbox One Player",
+						"body": {
+							"name": "Xbox One Player",
+							"type": "unity",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: PS4 Player",
+						"body": {
+							"name": "PS4 Player",
+							"type": "unity",
+							"request": "launch"
+						}
+					},
+					{
+						"label": "Unity Debug: SwitchPlayer",
+						"body": {
+							"name": "SwitchPlayer",
+							"type": "unity",
+							"request": "launch"
+						}
+					}
+				]
+			}
+		]
+	},
+	"__metadata": {
+		"id": "8ff6ec64-61c9-43ec-a403-f3776e19b318",
+		"publisherId": "8d652c70-e7b9-473a-b7ca-53cc50e691c9",
+		"publisherDisplayName": "shinganEuler",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1687792524681,
+		"preRelease": false
+	}
+}

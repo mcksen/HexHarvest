@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objecttoSpawn: {fileID: 751458796657743715, guid: 37f8b79523479f14884d285ef32d100f, type: 3}
-  xRange: -45
+  xRange: -4
   zRange: -45
   position: {x: 0, y: 0, z: 0}
   maxSpawnQuantity: 5

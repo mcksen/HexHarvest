@@ -22,7 +22,7 @@ public class MoveLeftRight : MonoBehaviour
 
         //Move the witch left and right
 
-        transform.position = transform.position + (transform.forward * Time.deltaTime * speed*horizontalInput);
+        transform.position = transform.position + (transform.right* Time.deltaTime * speed*horizontalInput);
 
     }
 }

@@ -5,15 +5,15 @@ using UnityEngine;
 public class Village : MonoBehaviour
 {
     [SerializeField] private Transform model;
-    // Start is called before the first frame update
-    void Start()
-    {
+    private bool doesHaveChild;
 
+
+    public void Awake()
+    {
+        doesHaveChild = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    
 
-    }
+
 }
