@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 1938685987947453575}
+  doesHaveChild: 0
+  colliderEmptyObject: {fileID: 8128594387618411350}
 --- !u!1 &4097282268974656450
 GameObject:
   m_ObjectHideFlags: 0

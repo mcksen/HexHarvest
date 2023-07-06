@@ -190,6 +190,9 @@ MonoBehaviour:
   minSpawnQuantity: 2
   gap: 8
   timespan: 20
+  evvy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5124805125970937648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,3 +213,6 @@ MonoBehaviour:
   minSpawnQuantity: 1
   gap: 5
   timespan: 15
+  evvy:
+    m_PersistentCalls:
+      m_Calls: []

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawnRandomObjects : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class SpawnRandomObjects : MonoBehaviour
     [SerializeField] private float gap;
 
     [SerializeField] private int timespan;
+    [SerializeField] private UnityEvent evvy;
     private List<GameObject> listToSpawn = new List<GameObject>();
 
 
