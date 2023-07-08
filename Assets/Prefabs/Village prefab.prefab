@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4575140067222368389}
   - component: {fileID: 7739651579757160833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Village prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4575140067222368389
 Transform:
@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1938685987947453575}
   - {fileID: 4762394867116999755}
+  - {fileID: 1938685987947453575}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 1938685987947453575}
-  doesHaveChild: 0
+  doesHaveChild: 1
   colliderEmptyObject: {fileID: 8128594387618411350}
 --- !u!1 &4097282268974656450
 GameObject:
@@ -60,12 +60,12 @@ GameObject:
   - component: {fileID: 1938685987947453575}
   - component: {fileID: 2263075841467655520}
   - component: {fileID: 5116072445349591996}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Village
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1938685987947453575
 Transform:
@@ -75,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4097282268974656450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.57, y: 0, z: 2.65}
+  m_LocalPosition: {x: 2.5699997, y: 0, z: 2.6499996}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 4762394867116999755}
   - component: {fileID: 4206899374557584552}
   - component: {fileID: 6938613598702689523}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
