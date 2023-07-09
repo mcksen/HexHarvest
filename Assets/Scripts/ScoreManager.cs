@@ -12,9 +12,20 @@ public class ScoreManager : MonoBehaviour
 
 
 
-    private int score = 0;
-    private int highScore = 0;
-
+    private int score;
+    private int highScore;
+    public void Awake()
+    {
+        score = 0;
+        if (PlayerPrefs.HasKey("Highscore"))
+        {
+            highScore = PlayerPrefs.GetInt("Highscore");
+        }
+        else
+        {
+            highScore = 0;
+        }
+    }
 
 
 
@@ -36,6 +47,8 @@ public class ScoreManager : MonoBehaviour
         {
             highScore = score;
             highscoreText.text = "Highdcore: " + highScore.ToString();
+            PlayerPrefs.SetInt("Highscore", highScore);
+            PlayerPrefs.Save();
         }
     }
 

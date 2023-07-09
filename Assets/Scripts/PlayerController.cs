@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour
     {
 
         Debug.Log("enter");
-        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        Damager damage = other.gameObject.GetComponent<Damager>();
+        if (damage != null)
         {
-            //player gets damage
-
+            EventManager.HandleDamageRecieved(damage.Damange);
         }
+
+
 
     }
     private void OnTriggerStay(Collider other)
