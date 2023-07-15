@@ -16,6 +16,7 @@ public class SpawnRandomObjects : MonoBehaviour
     [SerializeField] private int minSpawnQuantity;
     [SerializeField] private float gap;
 
+
     [SerializeField] private int timespan;
 
     private List<GameObject> listToSpawn = new List<GameObject>();
@@ -25,6 +26,7 @@ public class SpawnRandomObjects : MonoBehaviour
 
     public int GetObjectCount(int maxQuantity, int minQuantity, int timespan)
     {
+        //return 5;
         float time = Time.realtimeSinceStartup;
         float spanwCount = time / timespan;
         spanwCount = Mathf.Clamp(spanwCount, minQuantity, maxQuantity);
@@ -56,7 +58,9 @@ public class SpawnRandomObjects : MonoBehaviour
         int t = 0;
         while (!isAssigned && t < 100)
         {
-            Vector3 tryPosition = new Vector3(Random.Range(transform.position.x, transform.position.x + xRange), transform.position.y, Random.Range(transform.position.z, transform.position.z + zRange));
+            float x = Random.Range(transform.position.x, transform.position.x + xRange);
+            float z = Random.Range(transform.position.z, transform.position.z + zRange);
+            Vector3 tryPosition = new Vector3(x, transform.position.y, z);
             if (listToSpawn.Count > 0)
             {
                 for (int i = 0; i < listToSpawn.Count; i++)
@@ -84,6 +88,16 @@ public class SpawnRandomObjects : MonoBehaviour
             t++;
         }
 
+        //if (Vector3.Distance(transform.position, position) > 80)
+        //{
+        //    Debug.LogError("FINFIFNINF" + position + " " + t);
+        //}
+
+        //if (position.x > -2.5f)
+        //{
+        //    Debug.LogError("hihihi" + GetInstanceID());
+        //}
+
         return position;
     }
 
@@ -93,18 +107,19 @@ public class SpawnRandomObjects : MonoBehaviour
 
     public void SpawnObjects()
     {
-
         Rebuild();
         int count = GetObjectCount(maxSpawnQuantity, minSpawnQuantity, timespan);
 
 
         for (int i = 0; i < count; i++)
         {
-            GameObject spawn = GameObject.Instantiate(objecttoSpawn, transform.position, transform.rotation, transform);
-            spawn.transform.position = GetPosition();
-            listToSpawn.Add(spawn);
+            Vector3 pos = GetPosition();
+            if (pos != Vector3.zero)
+            {
+                GameObject spawn = GameObject.Instantiate(objecttoSpawn, pos, transform.rotation, transform);
 
-
+                listToSpawn.Add(spawn);
+            }
         }
 
     }
