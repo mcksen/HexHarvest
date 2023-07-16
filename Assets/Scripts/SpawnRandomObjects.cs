@@ -6,10 +6,10 @@ using UnityEngine.Events;
 
 public class SpawnRandomObjects : MonoBehaviour
 {
-    [SerializeField] private GameObject objecttoSpawn;
+    [SerializeField] private GameObject objectToSpawn;
     [SerializeField] private float xRange;
     [SerializeField] private float zRange;
-    [SerializeField] private Vector3 position;
+
 
     [SerializeField] private int maxSpawnQuantity;
 
@@ -116,7 +116,7 @@ public class SpawnRandomObjects : MonoBehaviour
             Vector3 pos = GetPosition();
             if (pos != Vector3.zero)
             {
-                GameObject spawn = GameObject.Instantiate(objecttoSpawn, pos, transform.rotation, transform);
+                GameObject spawn = GameObject.Instantiate(objectToSpawn, pos, transform.rotation, transform);
 
                 listToSpawn.Add(spawn);
             }
