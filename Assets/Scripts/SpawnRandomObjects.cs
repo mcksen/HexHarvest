@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class SpawnRandomObjects : MonoBehaviour
 {
     [SerializeField] private GameObject objectToSpawn;
+    [SerializeField] private float yPosition;
     [SerializeField] private float xRange;
     [SerializeField] private float zRange;
 
@@ -32,6 +33,7 @@ public class SpawnRandomObjects : MonoBehaviour
         spanwCount = Mathf.Clamp(spanwCount, minQuantity, maxQuantity);
 
         return Mathf.RoundToInt(spanwCount);
+
     }
 
 
@@ -58,9 +60,14 @@ public class SpawnRandomObjects : MonoBehaviour
         int t = 0;
         while (!isAssigned && t < 100)
         {
+            if (yPosition == 0)
+            {
+                yPosition = transform.position.y;
+            }
+
             float x = Random.Range(transform.position.x, transform.position.x + xRange);
             float z = Random.Range(transform.position.z, transform.position.z + zRange);
-            Vector3 tryPosition = new Vector3(x, transform.position.y, z);
+            Vector3 tryPosition = new Vector3(x, yPosition, z);
             if (listToSpawn.Count > 0)
             {
                 for (int i = 0; i < listToSpawn.Count; i++)
