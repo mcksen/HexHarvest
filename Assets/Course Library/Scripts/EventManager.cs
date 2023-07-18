@@ -14,6 +14,8 @@ public static class EventManager
     public delegate void PlayerHit(float damage);
     public static PlayerHit onDamageRecieved;
 
+    public delegate void UIevents();
+    public static UIevents onDamageRecievedUI;
 
     public delegate void GameOver();
     public static GameOver onDefeated;
@@ -42,7 +44,13 @@ public static class EventManager
             onDefeated();
         }
     }
-
+    public static void HandleDamageRecievedUI()
+    {
+        if (onDamageRecievedUI != null)
+        {
+            onDamageRecievedUI();
+        }
+    }
 
 
 

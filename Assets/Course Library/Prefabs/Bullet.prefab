@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7494bfeada778da468155d20113c3e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
 --- !u!114 &5346973444953639329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a321d15925a95b48aa67d133dc1fcf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRange: 5
+  shootingRange: 9
   xRange: 1
 --- !u!1 &4134803452933971312
 GameObject:
@@ -226,7 +226,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 0.68064356, b: 0.7735849, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 20
   m_SpotAngle: 38.2
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -264,7 +264,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 0.18275638, y: 0.45998353}
   m_BounceIntensity: 1

@@ -108,11 +108,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 234227390568007083, guid: 3ae2eecf9d525574c9c8ca641c153acb, type: 3}
+  yPosition: 0
   xRange: 1
   zRange: 3
-  maxSpawnQuantity: 3
-  minSpawnQuantity: 3
-  gap: 0.5
+  maxSpawnQuantity: 4
+  minSpawnQuantity: 2
+  gap: 1
   timespan: 2
 --- !u!1 &6441097471466331328
 GameObject:
@@ -191,6 +192,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1470257344741939666}
     m_Modifications:
+    - target: {fileID: 1398502715529671435, guid: ea7b22b801b466e42b57550f1658f882, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2383644737724275340, guid: ea7b22b801b466e42b57550f1658f882, type: 3}
       propertyPath: m_RootOrder
       value: 4

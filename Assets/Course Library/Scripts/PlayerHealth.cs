@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public void HandleDamageRecieved(float damage)
     {
         lifes -= damage;
-
+        EventManager.HandleDamageRecievedUI();
     }
 
 
