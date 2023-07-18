@@ -33,7 +33,7 @@ public class ScoreManager : MonoBehaviour
     {
         //Change to load from the saved file when savemanager is made
 
-        scoreText.text = "SCORE: " + score.ToString();
+        scoreText.text = score.ToString();
         highscoreText.text = "Highscore: " + highScore.ToString();
 
         EventManager.onScoreIncreased += IncreaseScore;
@@ -42,7 +42,7 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore()
     {
         score += 1;
-        scoreText.text = "SCORE: " + score.ToString();
+        scoreText.text = score.ToString();
         if (score > highScore)
         {
             highScore = score;
