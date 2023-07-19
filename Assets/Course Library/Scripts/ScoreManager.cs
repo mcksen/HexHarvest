@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
     public void Awake()
     {
         score = 0;
+
         if (PlayerPrefs.HasKey("Highscore"))
         {
             highScore = PlayerPrefs.GetInt("Highscore");
@@ -25,17 +26,23 @@ public class ScoreManager : MonoBehaviour
         {
             highScore = 0;
         }
+
     }
+
 
 
 
     public void Start()
     {
         //Change to load from the saved file when savemanager is made
-
-        scoreText.text = score.ToString();
-        highscoreText.text = "Highscore: " + highScore.ToString();
-
+        if (scoreText != null)
+        {
+            scoreText.text = score.ToString();
+        }
+        if (highscoreText != null)
+        {
+            highscoreText.text = highScore.ToString();
+        }
         EventManager.onScoreIncreased += IncreaseScore;
     }
 
@@ -46,7 +53,7 @@ public class ScoreManager : MonoBehaviour
         if (score > highScore)
         {
             highScore = score;
-            highscoreText.text = "Highdcore: " + highScore.ToString();
+
             PlayerPrefs.SetInt("Highscore", highScore);
             PlayerPrefs.Save();
         }
