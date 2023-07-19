@@ -32,13 +32,13 @@ public class PlayerHealthUI : MonoBehaviour
             {
                 hearts[i].enabled = false;
             }
-            remainingHealth = PlayerHealth.instance.GetHealthValue();
         }
 
     }
 
     public void HandleDamageRecievedUI()
     {
+        remainingHealth = PlayerHealth.instance.GetHealthValue();
         for (int i = 0; i < hearts.Length; i++)
         {
             hearts[i].fillAmount = remainingHealth - i;
