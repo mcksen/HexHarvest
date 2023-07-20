@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 8572687610480763432}
+  numberToSpawn: 4
 --- !u!1 &1881509921204629603
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,10 +112,7 @@ MonoBehaviour:
   yPosition: 0
   xRange: 1
   zRange: 3
-  maxSpawnQuantity: 4
-  minSpawnQuantity: 2
   gap: 1
-  timespan: 2
 --- !u!1 &6441097471466331328
 GameObject:
   m_ObjectHideFlags: 0

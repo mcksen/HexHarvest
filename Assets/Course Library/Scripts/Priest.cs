@@ -6,23 +6,18 @@ public class Priest : MonoBehaviour
 {
 
     [SerializeField] private SpawnRandomObjects bulletSpawn;
+    [SerializeField] private int numberToSpawn;
 
 
-
-    // Start is called before the first frame update
-    void Awake()
+    private void Awake()
     {
-        Rebuild();
+        bulletSpawn.SpawnObjects(numberToSpawn);
     }
 
 
 
 
-    public void Rebuild()
-    {
-        bulletSpawn.SpawnObjects();
 
-    }
 
 
 

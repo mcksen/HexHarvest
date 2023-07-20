@@ -12,29 +12,18 @@ public class SpawnRandomObjects : MonoBehaviour
     [SerializeField] private float zRange;
 
 
-    [SerializeField] private int maxSpawnQuantity;
 
-    [SerializeField] private int minSpawnQuantity;
     [SerializeField] private float gap;
 
 
-    [SerializeField] private int timespan;
+
 
     private List<GameObject> listToSpawn = new List<GameObject>();
 
 
 
 
-    public int GetObjectCount(int maxQuantity, int minQuantity, int timespan)
-    {
-        //return 5;
-        float time = Time.realtimeSinceStartup;
-        float spanwCount = time / timespan;
-        spanwCount = Mathf.Clamp(spanwCount, minQuantity, maxQuantity);
 
-        return Mathf.RoundToInt(spanwCount);
-
-    }
 
 
     private void Rebuild()
@@ -112,10 +101,10 @@ public class SpawnRandomObjects : MonoBehaviour
 
 
 
-    public void SpawnObjects()
+    public void SpawnObjects(int count)
     {
         Rebuild();
-        int count = GetObjectCount(maxSpawnQuantity, minSpawnQuantity, timespan);
+
 
 
         for (int i = 0; i < count; i++)

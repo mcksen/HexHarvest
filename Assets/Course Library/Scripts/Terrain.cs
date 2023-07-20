@@ -9,8 +9,8 @@ namespace Ksen
     {
 
         [SerializeField] private Transform model;
-        [SerializeField] private SpawnRandomObjects villageSpawn;
-        [SerializeField] private SpawnRandomObjects priestSpawn;
+        [SerializeField] private SpawnProgression villageSpawn;
+        [SerializeField] private SpawnProgression priestSpawn;
 
         // Start is called before the first frame update
         void Awake()
@@ -39,10 +39,6 @@ namespace Ksen
             priestSpawn.SpawnObjects();
 
         }
-        // Update is called once per frame
-        void Update()
-        {
 
-        }
     }
 }

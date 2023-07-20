@@ -395,10 +395,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 205274647274992170}
-  - component: {fileID: 2504663766796681664}
   - component: {fileID: 4577598837942965679}
+  - component: {fileID: 2838330270562234950}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner Priests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,26 +419,6 @@ Transform:
   m_Father: {fileID: 7559799088469626874}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2504663766796681664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7412731694884294913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efbe378ed669f1d48ade4a4f44a03bad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3234851168001638421, guid: c2f2f087e0d9a9f4e8c43287daa80d0a, type: 3}
-  yPosition: 0
-  xRange: -45
-  zRange: -45
-  maxSpawnQuantity: 7
-  minSpawnQuantity: 2
-  gap: 8
-  timespan: 20
 --- !u!114 &4577598837942965679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,10 +435,89 @@ MonoBehaviour:
   yPosition: 5
   xRange: -45
   zRange: -45
-  maxSpawnQuantity: 5
-  minSpawnQuantity: 1
   gap: 6
+--- !u!114 &2838330270562234950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412731694884294913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84a13c2ffcd883449b070f9189198e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpawnQuantity: 5
+  minSpawnQuantity: 2
   timespan: 5
+  spawn: {fileID: 4577598837942965679}
+--- !u!1 &7527795979402712139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 452647977934673173}
+  - component: {fileID: 2710210792555682159}
+  - component: {fileID: 994915874639424256}
+  m_Layer: 0
+  m_Name: Spawner Village
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &452647977934673173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527795979402712139}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.5, y: 0, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7559799088469626874}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2710210792555682159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527795979402712139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbe378ed669f1d48ade4a4f44a03bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 3234851168001638421, guid: c2f2f087e0d9a9f4e8c43287daa80d0a, type: 3}
+  yPosition: 0
+  xRange: -45
+  zRange: -45
+  gap: 8
+--- !u!114 &994915874639424256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527795979402712139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b84a13c2ffcd883449b070f9189198e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpawnQuantity: 5
+  minSpawnQuantity: 2
+  timespan: 5
+  spawn: {fileID: 2710210792555682159}
 --- !u!1 &8860927064188322020
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +550,7 @@ Transform:
   m_Children:
   - {fileID: 2128922267417471257}
   - {fileID: 205274647274992170}
+  - {fileID: 452647977934673173}
   - {fileID: 5958264874526888298}
   - {fileID: 8023493461253997846}
   m_Father: {fileID: 0}
@@ -522,8 +582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 2128922267417471257}
-  villageSpawn: {fileID: 2504663766796681664}
-  priestSpawn: {fileID: 4577598837942965679}
+  villageSpawn: {fileID: 994915874639424256}
+  priestSpawn: {fileID: 2838330270562234950}
 --- !u!1001 &78607450866143605
 PrefabInstance:
   m_ObjectHideFlags: 0
