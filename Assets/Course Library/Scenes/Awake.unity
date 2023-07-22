@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneController: {fileID: 11400000, guid: 38af09dc9dd37e642b31f0eb17fb30df, type: 2}
+  eventManager: {fileID: 11400000, guid: 679831805fed5ab4c9de7a51cb946f2b, type: 2}
 --- !u!4 &165248030
 Transform:
   m_ObjectHideFlags: 0

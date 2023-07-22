@@ -13,12 +13,13 @@ public class Village : MonoBehaviour
     {
         doesHaveChild = true;
 
-        EventManager.onInfantCollect += TryCollectyInfant;
+        EventManager.instance.onInfantCollect += TryCollectyInfant;
+
     }
 
     public void OnDestroy()
     {
-        EventManager.onInfantCollect -= TryCollectyInfant;
+        EventManager.instance.onInfantCollect -= TryCollectyInfant;
     }
 
     public void TryCollectyInfant(GameObject village)
@@ -26,7 +27,7 @@ public class Village : MonoBehaviour
         if (village == colliderEmptyObject && doesHaveChild == true)
         {
             doesHaveChild = false;
-            EventManager.onScoreIncreased();
+            EventManager.instance.onScoreIncreased();
 
         }
     }

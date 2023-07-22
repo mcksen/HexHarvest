@@ -15,7 +15,7 @@ public class ThreadmillTerrainManager : MonoBehaviour
     private float terrainHeight;
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         gap = 0;
         terrainHeight = singleTerrain.GetTerrainSize("h");

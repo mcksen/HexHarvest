@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,29 +8,57 @@ public class PlayerHealth : MonoBehaviour
 {
 
 
-    private float lifes;
+    [SerializeField] private float lifes;
     public static PlayerHealth instance;
+    private float healthonAwake;
 
 
-    void Awake()
+    // --------------------------------------------------------------------------------------
+    // Core  functions
+    // --------------------------------------------------------------------------------------
+
+
+    private void Awake()
     {
-        lifes = 3;
+        healthonAwake = lifes;
         instance = this;
-        EventManager.onDamageRecieved += HandleDamageRecieved;
-
+        EventManager.instance.onDamageRecieved += HandleDamageRecieved;
+        EventManager.instance.onNewGameSelected += HandleNewGameSelected;
+    }
+    private void Update()
+    {
+        if (lifes == 0)
+        {
+            EventManager.instance.HandleDefeat();
+        }
+    }
+    private void OnDestroy()
+    {
+        EventManager.instance.onDamageRecieved -= HandleDamageRecieved;
+        EventManager.instance.onNewGameSelected -= HandleNewGameSelected;
     }
 
-    public void HandleDamageRecieved(float damage)
+
+
+    // --------------------------------------------------------------------------------------
+    // Event-dependant  functions
+    // --------------------------------------------------------------------------------------
+
+    private void HandleNewGameSelected()
+    {
+        lifes = healthonAwake;
+    }
+
+    private void HandleDamageRecieved(float damage)
     {
         lifes -= damage;
-        EventManager.HandleDamageRecievedUI();
+        EventManager.instance.HandleDamageRecievedUI();
     }
 
 
-    public void OnDestroy()
-    {
-        EventManager.onDamageRecieved -= HandleDamageRecieved;
-    }
+    // --------------------------------------------------------------------------------------
+    //Player Health-speciefic  functions
+    // --------------------------------------------------------------------------------------
 
     public float GetHealthValue()
     {
@@ -37,13 +66,5 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void Update()
-    {
-        if (lifes == 0)
-        {
-            EventManager.HandleDefeat();
-
-        }
-    }
 
 }

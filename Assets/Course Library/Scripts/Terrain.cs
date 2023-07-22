@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,11 +14,22 @@ namespace Ksen
         [SerializeField] private SpawnProgression priestSpawn;
 
         // Start is called before the first frame update
-        void Awake()
+        private void Start()
+        {
+            EventManager.instance.onTimeStart += HandleTimeStart;
+        }
+
+
+        private void OnDestroy()
+        {
+            EventManager.instance.onTimeStart -= HandleTimeStart;
+        }
+
+
+        private void HandleTimeStart()
         {
             Rebuild();
         }
-
 
         public float GetTerrainSize(string side)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,7 +35,7 @@ public class ScoreManager : MonoBehaviour
 
     public void Start()
     {
-        //Change to load from the saved file when savemanager is made
+
         if (scoreText != null)
         {
             scoreText.text = score.ToString();
@@ -43,7 +44,24 @@ public class ScoreManager : MonoBehaviour
         {
             highscoreText.text = highScore.ToString();
         }
-        EventManager.onScoreIncreased += IncreaseScore;
+        EventManager.instance.onScoreIncreased += IncreaseScore;
+        EventManager.instance.onNewGameSelected += HandleNewGameSelected;
+    }
+
+    public void OnDestroy()
+    {
+        EventManager.instance.onScoreIncreased -= IncreaseScore;
+        EventManager.instance.onNewGameSelected += HandleNewGameSelected;
+    }
+
+
+    // --------------------------------------------------------------------------------------
+    // Event-dependant  functions
+    // --------------------------------------------------------------------------------------
+
+    private void HandleNewGameSelected()
+    {
+        score = 0;
     }
 
     public void IncreaseScore()
@@ -61,8 +79,4 @@ public class ScoreManager : MonoBehaviour
 
 
 
-    public void OnDestroy()
-    {
-        EventManager.onScoreIncreased -= IncreaseScore;
-    }
 }

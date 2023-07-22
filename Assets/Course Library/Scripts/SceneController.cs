@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "SceneController", menuName = "Scriptable Objects/SceneController")]
 public class SceneController : ScriptableObject
 {
+    public static SceneController instance;
     [SerializeField] private string game;
     [SerializeField] private string ui;
     [SerializeField] private string menu;
@@ -14,28 +15,81 @@ public class SceneController : ScriptableObject
     [SerializeField] private string awake;
 
 
-    List<string> scenesToUnload = new List<string>();
+    List<string> scenesToUnload;
+
+    public void Initialise()
+    {
+        instance = this;
+        scenesToUnload = new List<string>();
+        EventManager.instance.onNewGameSelected += HandleNewGameSelected;
+        EventManager.instance.onMenuSelected += HandleMenuSelected;
+        EventManager.instance.onPauseSelected += HandlePauseSelected;
+        EventManager.instance.onResumeSelected += HandleResumeSelected;
+        EventManager.instance.onDefeated += HandleDefeat;
+    }
+    private void onDestroy()
+    {
+
+        EventManager.instance.onNewGameSelected -= HandleNewGameSelected;
+        EventManager.instance.onMenuSelected -= HandleMenuSelected;
+        EventManager.instance.onPauseSelected -= HandlePauseSelected;
+        EventManager.instance.onResumeSelected -= HandleResumeSelected;
+        EventManager.instance.onDefeated -= HandleDefeat;
+    }
+
+    // --------------------------------------------------------------------------------------
+    // Event-dependant functions
+    // --------------------------------------------------------------------------------------
+
+    private void HandleNewGameSelected()
+    {
+        StartNewGame();
+    }
+    private void HandleDefeat()
+    {
+        LoseGame();
+    }
+    private void HandlePauseSelected()
+    {
+        PauseGame();
+    }
+    private void HandleResumeSelected()
+    {
+        UnpauseGame();
+    }
+    private void HandleMenuSelected()
+    {
+        ReturnToMenu();
+    }
+
+
+
+
+
+    // --------------------------------------------------------------------------------------
+    // Scene Controller-speciefic functions
+    // --------------------------------------------------------------------------------------
 
     public void OpenGame()
     {
-        scenesToUnload.Add(awake);
         LoadScene(menu, false);
 
         LoadScene(game, true);
-        Time.timeScale = 0;
+        scenesToUnload.Add(awake);
+
     }
     public void StartNewGame()
     {
         UnloadScenes();
         LoadScene(ui, false);
-        Time.timeScale = 1;
+
     }
 
     public void PauseGame()
     {
         LoadScene(pause, false);
 
-        Time.timeScale = 0;
+
     }
 
 
@@ -43,14 +97,14 @@ public class SceneController : ScriptableObject
     {
         SceneManager.UnloadSceneAsync(pause);
         scenesToUnload.Remove(pause);
-        Time.timeScale = 1;
+
     }
 
     public void LoseGame()
     {
         UnloadScenes();
         LoadScene(gameOver, false); ;
-        Time.timeScale = 0;
+
     }
 
     public void ReturnToMenu()
@@ -59,11 +113,7 @@ public class SceneController : ScriptableObject
         LoadScene(menu, false);
     }
 
-    public void ExitGame()
-    {
-        Application.Unload();
-        Application.Quit();
-    }
+
 
 
     public void LoadScene(string name, bool isPermanent)
@@ -77,12 +127,15 @@ public class SceneController : ScriptableObject
 
     public void UnloadScenes()
     {
-        foreach (string i in scenesToUnload)
+        if (scenesToUnload != null)
         {
-            SceneManager.UnloadSceneAsync(i);
+            foreach (string i in scenesToUnload)
+            {
+                SceneManager.UnloadSceneAsync(i);
 
+            }
+            scenesToUnload.Clear();
         }
-        scenesToUnload.Clear();
     }
 
 }

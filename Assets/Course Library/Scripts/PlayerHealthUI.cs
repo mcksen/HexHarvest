@@ -14,7 +14,7 @@ public class PlayerHealthUI : MonoBehaviour
     public void Awake()
     {
 
-        EventManager.onDamageRecievedUI += HandleDamageRecievedUI;
+        EventManager.instance.onDamageRecievedUI += HandleDamageRecievedUI;
     }
 
 
@@ -49,7 +49,7 @@ public class PlayerHealthUI : MonoBehaviour
 
     public void OnDestroy()
     {
-        EventManager.onDamageRecievedUI -= HandleDamageRecievedUI;
+        EventManager.instance.onDamageRecievedUI -= HandleDamageRecievedUI;
     }
 
 }

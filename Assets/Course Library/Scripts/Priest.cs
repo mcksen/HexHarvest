@@ -9,7 +9,7 @@ public class Priest : MonoBehaviour
     [SerializeField] private int numberToSpawn;
 
 
-    private void Awake()
+    private void Start()
     {
         bulletSpawn.SpawnObjects(numberToSpawn);
     }
