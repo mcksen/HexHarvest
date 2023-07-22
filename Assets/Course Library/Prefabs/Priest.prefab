@@ -250,6 +250,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2723645945614685309, guid: ea7b22b801b466e42b57550f1658f882, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642518580260322421, guid: ea7b22b801b466e42b57550f1658f882, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8354226691819166112, guid: ea7b22b801b466e42b57550f1658f882, type: 3}
       propertyPath: m_Name
       value: PT_Priest_StPatrick

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float xRangeMin;
     [SerializeField] float xRangeMax;
+    [SerializeField] GameObject model;
     private Vector3 startingPosition;
 
     // --------------------------------------------------------------------------------------
@@ -69,5 +70,6 @@ public class PlayerController : MonoBehaviour
     private void HandleNewGameSelected()
     {
         transform.position = startingPosition;
+        model.SetActive(true);
     }
 }
