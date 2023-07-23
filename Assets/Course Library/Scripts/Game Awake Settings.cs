@@ -13,5 +13,6 @@ public class GameAwakeSettings : MonoBehaviour
         eventManager.Initialise();
         sceneController.Initialise();
         sceneController.OpenGame();
+
     }
 }

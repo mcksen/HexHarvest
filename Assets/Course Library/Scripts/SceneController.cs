@@ -87,6 +87,7 @@ public class SceneController : ScriptableObject
 
     public void PauseGame()
     {
+        UnloadScenes();
         LoadScene(pause, false);
 
 
@@ -97,13 +98,15 @@ public class SceneController : ScriptableObject
     {
         SceneManager.UnloadSceneAsync(pause);
         scenesToUnload.Remove(pause);
+        LoadScene(ui, false);
 
     }
 
     public void LoseGame()
     {
         UnloadScenes();
-        LoadScene(gameOver, false); ;
+        LoadScene(gameOver, false);
+
 
     }
 
@@ -123,6 +126,7 @@ public class SceneController : ScriptableObject
         {
             scenesToUnload.Add(name);
         }
+        Debug.Log("pop");
     }
 
     public void UnloadScenes()

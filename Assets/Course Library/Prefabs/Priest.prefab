@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1470257344741939666}
   - component: {fileID: 2090745762235388063}
   - component: {fileID: 1250886057385603488}
+  - component: {fileID: 3872977831457820265}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Untagged
@@ -63,6 +64,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 8572687610480763432}
   numberToSpawn: 4
+--- !u!114 &3872977831457820265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751458796657743715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 647e89f75cddef345b7826fe12f1cfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 7838479081438617290}
+  gameActive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 751458796657743715}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  gameInActive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 751458796657743715}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1881509921204629603
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77207d3c08527b549881d716d40c445e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
 --- !u!1001 &2249534648714348394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,6 +314,11 @@ PrefabInstance:
 --- !u!4 &4477593543086808550 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2383644737724275340, guid: ea7b22b801b466e42b57550f1658f882, type: 3}
+  m_PrefabInstance: {fileID: 2249534648714348394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7838479081438617290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8354226691819166112, guid: ea7b22b801b466e42b57550f1658f882, type: 3}
   m_PrefabInstance: {fileID: 2249534648714348394}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4825006798360817163

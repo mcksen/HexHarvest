@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 {
     private void Awake()
     {
+
         EventManager.instance.onExitSelected += HandleExitSelected;
         EventManager.instance.onNewGameSelected += HandleNewGameSelected;
         EventManager.instance.onMenuSelected += HandleMenuSelected;

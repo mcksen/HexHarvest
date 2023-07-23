@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Course Library/Scenes/Awake.unity
+    guid: 67be657ee846bee4ca6093faf29891c6
+  - enabled: 1
     path: Assets/Course Library/Scenes/Menu.unity
     guid: 558b5c5c088b4ed4c8612cdbf1633dec
   - enabled: 1
@@ -14,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Course Library/Scenes/UI.unity
     guid: 557611411ea07de449bacb624723da5c
+  - enabled: 1
+    path: Assets/Course Library/Scenes/Pause.unity
+    guid: 4d2e85ed0f62ce746b45e21a76a019a4
+  - enabled: 1
+    path: Assets/Course Library/Scenes/Game Over.unity
+    guid: 1f788927a8823144cb47b2d5c1d57750
   m_configObjects: {}

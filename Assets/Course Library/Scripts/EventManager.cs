@@ -21,6 +21,7 @@ public class EventManager : ScriptableObject
     public UIevents onDamageRecievedUI;
 
     public delegate void GameStateEvent();
+
     public GameStateEvent onDefeated;
     public GameStateEvent onNewGameSelected;
     public GameStateEvent onPauseSelected;
@@ -112,4 +113,5 @@ public class EventManager : ScriptableObject
             onExitSelected();
         }
     }
+
 }

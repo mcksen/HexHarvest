@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float xRangeMin;
     [SerializeField] float xRangeMax;
-    [SerializeField] GameObject model;
+
     private Vector3 startingPosition;
 
     // --------------------------------------------------------------------------------------
@@ -18,7 +19,9 @@ public class PlayerController : MonoBehaviour
     {
         startingPosition = transform.position;
         EventManager.instance.onNewGameSelected += HandleNewGameSelected;
+
     }
+
 
     private void Update()
     {
@@ -70,6 +73,8 @@ public class PlayerController : MonoBehaviour
     private void HandleNewGameSelected()
     {
         transform.position = startingPosition;
-        model.SetActive(true);
+
+
     }
+
 }

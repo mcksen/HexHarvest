@@ -25,13 +25,7 @@ public class PlayerHealth : MonoBehaviour
         EventManager.instance.onDamageRecieved += HandleDamageRecieved;
         EventManager.instance.onNewGameSelected += HandleNewGameSelected;
     }
-    private void Update()
-    {
-        if (lifes == 0)
-        {
-            EventManager.instance.HandleDefeat();
-        }
-    }
+
     private void OnDestroy()
     {
         EventManager.instance.onDamageRecieved -= HandleDamageRecieved;
@@ -53,6 +47,10 @@ public class PlayerHealth : MonoBehaviour
     {
         lifes -= damage;
         EventManager.instance.HandleDamageRecievedUI();
+        if (lifes <= 0)
+        {
+            EventManager.instance.HandleDefeat();
+        }
     }
 
 
