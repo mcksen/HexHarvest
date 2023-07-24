@@ -6,21 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Course Library/Scenes/Awake.unity
+    path: Assets/Main/Scenes/Awake.unity
     guid: 67be657ee846bee4ca6093faf29891c6
   - enabled: 1
-    path: Assets/Course Library/Scenes/Menu.unity
+    path: Assets/Main/Scenes/Audio Scene.unity
+    guid: b43cb6b1003f8c64885996117fbef9ca
+  - enabled: 1
+    path: Assets/Main/Scenes/Menu.unity
     guid: 558b5c5c088b4ed4c8612cdbf1633dec
   - enabled: 1
-    path: Assets/Course Library/Scenes/Game.unity
+    path: Assets/Main/Scenes/Game.unity
     guid: f0196d95ff9244ffaa65879ba7824fd4
   - enabled: 1
-    path: Assets/Course Library/Scenes/UI.unity
+    path: Assets/Main/Scenes/UI.unity
     guid: 557611411ea07de449bacb624723da5c
   - enabled: 1
-    path: Assets/Course Library/Scenes/Pause.unity
+    path: Assets/Main/Scenes/Pause.unity
     guid: 4d2e85ed0f62ce746b45e21a76a019a4
   - enabled: 1
-    path: Assets/Course Library/Scenes/Game Over.unity
+    path: Assets/Main/Scenes/Game Over.unity
     guid: 1f788927a8823144cb47b2d5c1d57750
   m_configObjects: {}
