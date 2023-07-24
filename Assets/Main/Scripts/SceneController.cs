@@ -81,7 +81,7 @@ public class SceneController : ScriptableObject
         LoadScene(game, true);
         scenesToUnload.Add(awake);
         Debug.Log("bbbbbbbbbbbbbbbbbbbb" + Time.frameCount);
-        EventManager.instance.HandlePlayGameAwake();
+
 
     }
     public void StartNewGame()
