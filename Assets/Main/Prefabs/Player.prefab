@@ -106,7 +106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xRangeMin: -45
   xRangeMax: -5
-  model: {fileID: 6258708568575925839}
 --- !u!54 &8243311527523541572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -146,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dffa1d1e9deed64b8a17bac99d85d37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifes: 1
+  lifes: 3
 --- !u!114 &1301157237060171796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,11 +325,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6728c64757ebe3047b051f53ad4e82fb, type: 3}
---- !u!1 &6258708568575925839 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6728c64757ebe3047b051f53ad4e82fb, type: 3}
-  m_PrefabInstance: {fileID: 6492518965072651038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6742089736503493877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6728c64757ebe3047b051f53ad4e82fb, type: 3}

@@ -28,7 +28,9 @@ public class AudioManager : MonoBehaviour
 
     public void Play(string name)
     {
+
         Sound i = Array.Find(sounds, sound => sound.Name == name);
+
         if (i.Name != null)
         {
             i.source.Play();
@@ -65,5 +67,16 @@ public class AudioManager : MonoBehaviour
             }
         }
 
+    }
+    public void PlayDelayed(string name)
+    {
+
+        Sound i = Array.Find(sounds, sound => sound.Name == name);
+
+        if (i.Name != null)
+        {
+            i.source.PlayDelayed(2);
+
+        }
     }
 }

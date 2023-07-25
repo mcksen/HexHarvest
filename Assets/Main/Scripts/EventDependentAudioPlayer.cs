@@ -65,6 +65,7 @@ public class EventDependentAudioPlayer : MonoBehaviour
     {
         StopAllAudio();
         Play(witchDeath);
+        PlayDelayed(ripTheme);
     }
 
     private void HandleResumeSelected()
@@ -81,6 +82,7 @@ public class EventDependentAudioPlayer : MonoBehaviour
 
     private void HandleMenuSelected()
     {
+
         StopAllAudio();
         Play(menuTheme);
     }
@@ -106,5 +108,8 @@ public class EventDependentAudioPlayer : MonoBehaviour
         AudioManager.instance.UnPause(name);
     }
 
-
+    public void PlayDelayed(string name)
+    {
+        AudioManager.instance.PlayDelayed(name);
+    }
 }
