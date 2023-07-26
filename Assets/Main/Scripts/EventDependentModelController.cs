@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class EventDependentModelController : MonoBehaviour
     [SerializeField] private GameObject model;
     [SerializeField] private UnityEvent gameActive;
     [SerializeField] private UnityEvent gameInActive;
+
+
+
     private void Awake()
     {
 
@@ -26,9 +30,6 @@ public class EventDependentModelController : MonoBehaviour
         EventManager.instance.onResumeSelected -= HandleResumeSelected;
         EventManager.instance.onDefeated -= HandleDefeat;
     }
-
-
-
 
 
 
@@ -84,4 +85,7 @@ public class EventDependentModelController : MonoBehaviour
 
         gameInActive.Invoke();
     }
+
+
+
 }

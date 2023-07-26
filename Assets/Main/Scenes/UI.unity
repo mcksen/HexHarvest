@@ -267,7 +267,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242359473}
-  - component: {fileID: 242359474}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -294,19 +293,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &242359474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242359472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d8fbf253a91556469706591508a8137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infantAnimation: {fileID: 0}
 --- !u!1 &247608087
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +822,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 679831805fed5ab4c9de7a51cb946f2b, type: 2}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: HandleButtonClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &953408735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,6 +1136,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 7685784187371800217, guid: 5dd658680542a9d448d1b7f43051b063, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7895867123435510022, guid: 5dd658680542a9d448d1b7f43051b063, type: 3}
       propertyPath: m_Animation
       value: 
@@ -1146,9 +1148,21 @@ PrefabInstance:
       propertyPath: m_AnimatePhysics
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7895867123435510022, guid: 5dd658680542a9d448d1b7f43051b063, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895867123435510022, guid: 5dd658680542a9d448d1b7f43051b063, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 9c45a58930ee438458a4df85c8bdc92f, type: 2}
     - target: {fileID: 8723590557552943555, guid: 5dd658680542a9d448d1b7f43051b063, type: 3}
       propertyPath: m_Name
       value: Infant Animation Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723590557552943555, guid: 5dd658680542a9d448d1b7f43051b063, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

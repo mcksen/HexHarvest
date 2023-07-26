@@ -35,11 +35,23 @@ public class EventManager : ScriptableObject
 
     public delegate void AudioEvent();
     public AudioEvent PlayGameAwake;
-
+    public AudioEvent onButtonClickSound;
     public void Initialise()
     {
         instance = this;
     }
+
+    public void HandleButtonClickSound()
+    {
+        if (onButtonClickSound != null)
+        {
+            onButtonClickSound();
+        }
+
+    }
+
+
+
 
     public void TryCollectInfant(GameObject village)
     {

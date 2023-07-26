@@ -12,9 +12,11 @@ public class EventDependentAudioPlayer : MonoBehaviour
     [SerializeField] private string hit;
     [SerializeField] private string witchDeath;
     [SerializeField] private string babyCry;
+    [SerializeField] private string buttonClick;
     public void Awake()
     {
         Debug.Log("rrrrrr" + Time.frameCount);
+        EventManager.instance.onButtonClickSound += HandleButtonClickSound;
         EventManager.instance.onScoreIncreased += HandleScoreIncreased;
         EventManager.instance.PlayGameAwake += HandlePlayGameAwake;
         EventManager.instance.onNewGameSelected += HandleNewGameSelected;
@@ -28,6 +30,7 @@ public class EventDependentAudioPlayer : MonoBehaviour
 
     private void OnDestroy()
     {
+        EventManager.instance.onButtonClickSound -= HandleButtonClickSound;
         EventManager.instance.onScoreIncreased -= HandleScoreIncreased;
         EventManager.instance.PlayGameAwake -= HandlePlayGameAwake;
         EventManager.instance.onNewGameSelected -= HandleNewGameSelected;
@@ -41,6 +44,11 @@ public class EventDependentAudioPlayer : MonoBehaviour
     // --------------------------------------------------------------------------------------
     // Event-dependent functions
     // --------------------------------------------------------------------------------------
+    private void HandleButtonClickSound()
+    {
+        Play(buttonClick);
+    }
+
     private void HandleScoreIncreased()
     {
         Play(babyCry);
