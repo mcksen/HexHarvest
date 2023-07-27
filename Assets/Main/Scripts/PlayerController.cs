@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         Damager damage = other.gameObject.GetComponent<Damager>();
         if (damage != null)
         {
-            EventManager.instance.HandleDamageRecieved(damage.Damange);
+            EventManager.instance.HandleDamageRecieved(damage.Damage);
         }
 
 

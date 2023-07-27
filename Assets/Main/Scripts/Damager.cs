@@ -5,7 +5,7 @@ using UnityEngine;
 public class Damager : MonoBehaviour
 {
     [SerializeField] private float damage;
-    public float Damange => damage;
+    public float Damage => damage;
 
 
 
