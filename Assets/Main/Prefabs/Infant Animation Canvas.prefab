@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8491758654809133236}
   - component: {fileID: 5381036636720405418}
   - component: {fileID: 7685784187371800217}
-  - component: {fileID: 7895867123435510022}
   m_Layer: 5
   m_Name: Infant image
   m_TagString: Untagged
@@ -99,21 +98,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &7895867123435510022
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2364968777286918928}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 45ee8fa28bbff2248ad75c54029e38fe, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &8723590557552943555
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +131,7 @@ RectTransform:
   m_Children:
   - {fileID: 5063987300838354576}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

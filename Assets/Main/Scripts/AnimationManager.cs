@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    [SerializeField] GameObject obj;
     private void Start()
     {
         EventManager.instance.onScoreIncreased += HandleScoreIncreased;
@@ -18,6 +18,7 @@ public class AnimationManager : MonoBehaviour
     }
     public void HandleScoreIncreased()
     {
-        animator.Play("Infant");
+        obj.GetComponent<Animator>().Play("Infant");
+        obj.GetComponent<Animator>().ResetTrigger("Infant");
     }
 }
