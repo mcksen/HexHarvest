@@ -541,7 +541,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 679831805fed5ab4c9de7a51cb946f2b, type: 2}
         m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
-        m_MethodName: HandleExitSelected
+        m_MethodName: HandleButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -553,7 +553,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 679831805fed5ab4c9de7a51cb946f2b, type: 2}
         m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
-        m_MethodName: HandleButtonClickSound
+        m_MethodName: HandleExitSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -687,7 +687,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 679831805fed5ab4c9de7a51cb946f2b, type: 2}
         m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
-        m_MethodName: HandleNewGameSelected
+        m_MethodName: HandleButtonClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -699,7 +699,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 679831805fed5ab4c9de7a51cb946f2b, type: 2}
         m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
-        m_MethodName: HandleButtonClickSound
+        m_MethodName: HandleNewGameSelected
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

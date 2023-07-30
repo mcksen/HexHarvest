@@ -77,7 +77,7 @@ public class SceneController : ScriptableObject
     {
 
         LoadScene(menu, false);
-        LoadScene(audioScene, false);
+        LoadScene(audioScene, true);
         LoadScene(game, true);
         scenesToUnload.Add(awake);
         Debug.Log("bbbbbbbbbbbbbbbbbbbb" + Time.frameCount);

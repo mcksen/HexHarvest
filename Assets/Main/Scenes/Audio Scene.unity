@@ -172,13 +172,13 @@ MonoBehaviour:
     pitch: 1.02
     loop: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: a270592df12b52245a80d07eaa052b3f, type: 3}
+  - clip: {fileID: 8300000, guid: 4c7c674e790550f408302ed745b4802d, type: 3}
     name: Hit
     volume: 0.785
     pitch: 1.02
     loop: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 421ff3280d6f4814db56c45af0634b62, type: 3}
+  - clip: {fileID: 8300000, guid: cf5b5921c74ac59488bd7f5b07409a8c, type: 3}
     name: Baby Collected
     volume: 0.785
     pitch: 1.02

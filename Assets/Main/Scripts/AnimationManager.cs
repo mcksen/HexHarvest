@@ -19,6 +19,6 @@ public class AnimationManager : MonoBehaviour
     public void HandleScoreIncreased()
     {
         obj.GetComponent<Animator>().Play("Infant");
-        obj.GetComponent<Animator>().ResetTrigger("Infant");
+
     }
 }
