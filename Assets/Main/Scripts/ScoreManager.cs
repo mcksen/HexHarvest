@@ -5,18 +5,22 @@ using TMPro;
 using UnityEngine;
 
 
-public class ScoreManager : MonoBehaviour
-{
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI highscoreText;
+[CreateAssetMenu(fileName = "ScoreManager", menuName = "Scriptable Objects/ScoreManager")]
 
+public class ScoreManager : ScriptableObject
+{
+
+    public static ScoreManager instance;
 
 
 
     private int score;
+    public int Score => score;
     private int highScore;
-    public void Awake()
+    public int HighScore => highScore;
+    public void Instantiate()
     {
+        instance = this;
         score = 0;
 
         if (PlayerPrefs.HasKey("Highscore"))
@@ -28,31 +32,12 @@ public class ScoreManager : MonoBehaviour
             highScore = 0;
         }
 
-    }
 
-
-
-
-    public void Start()
-    {
-
-        if (scoreText != null)
-        {
-            scoreText.text = score.ToString();
-        }
-        if (highscoreText != null)
-        {
-            highscoreText.text = highScore.ToString();
-        }
         EventManager.instance.onScoreIncreased += IncreaseScore;
         EventManager.instance.onNewGameSelected += HandleNewGameSelected;
     }
 
-    public void OnDestroy()
-    {
-        EventManager.instance.onScoreIncreased -= IncreaseScore;
-        EventManager.instance.onNewGameSelected += HandleNewGameSelected;
-    }
+
 
 
     // --------------------------------------------------------------------------------------
@@ -67,7 +52,7 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore()
     {
         score += 1;
-        scoreText.text = score.ToString();
+
         if (score > highScore)
         {
             highScore = score;
@@ -76,7 +61,13 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+    public int GetScore()
+    {
+        return score;
+    }
 
-
-
+    public int GetHighScore()
+    {
+        return highScore;
+    }
 }

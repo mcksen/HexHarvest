@@ -748,7 +748,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2221ed854655aa440b447b60321589db, type: 2}
   m_sharedMaterial: {fileID: 1329586485003945592, guid: 2221ed854655aa440b447b60321589db, type: 2}
@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 973032078}
   - component: {fileID: 973032077}
   - component: {fileID: 973032076}
-  - component: {fileID: 973032075}
+  - component: {fileID: 973032079}
   m_Layer: 5
   m_Name: Score Canvas
   m_TagString: Untagged
@@ -869,20 +869,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.25}
   m_SizeDelta: {x: 16.213, y: 13.87}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &973032075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973032073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87f1e3992f58664f85cfddc1e67131a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 698490247}
-  highscoreText: {fileID: 0}
 --- !u!114 &973032076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -946,6 +932,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &973032079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973032073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99903e8f79a53f4f90ddbd1a06d682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 698490247}
+  highscoreText: {fileID: 0}
 --- !u!1 &1001661152
 GameObject:
   m_ObjectHideFlags: 0
