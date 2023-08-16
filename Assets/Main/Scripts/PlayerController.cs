@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
     {
 
-        Debug.Log("enter");
+
         Damager damage = other.gameObject.GetComponent<Damager>();
         if (damage != null)
         {

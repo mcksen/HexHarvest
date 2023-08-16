@@ -12,11 +12,10 @@ public class MoveLeftRight : MonoBehaviour
     void Update()
     {
 
-        //Setting up input
         horizontalInput = Input.GetAxis("Horizontal");
 
 
-        //Move the witch left and right
+
 
         transform.position = transform.position + (transform.right * Time.deltaTime * speed * horizontalInput);
 

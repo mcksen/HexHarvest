@@ -3,7 +3,10 @@ guid: 704f480e7dc878c42b7dfe3f43bdccca
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sceneController: {fileID: 11400000, guid: 38af09dc9dd37e642b31f0eb17fb30df, type: 2}
+  - eventManager: {fileID: 11400000, guid: 679831805fed5ab4c9de7a51cb946f2b, type: 2}
+  - scoreManager: {fileID: 11400000, guid: 265e22387b15b2c4f93a9a1eef83f304, type: 2}
   executionOrder: 0
   icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   userData: 

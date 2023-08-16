@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("aw" + Time.frameCount);
+
         instance = this;
         foreach (Sound i in sounds)
         {

@@ -13,7 +13,7 @@ namespace Ksen
         [SerializeField] private SpawnProgression villageSpawn;
         [SerializeField] private SpawnProgression priestSpawn;
 
-        // Start is called before the first frame update
+
         private void Start()
         {
             EventManager.instance.onTimeStart += HandleTimeStart;

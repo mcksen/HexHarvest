@@ -23,10 +23,7 @@ public class Bullet : MonoBehaviour
         {
             transform.position = new Vector3(Random.Range(min, max), transform.position.y, transform.parent.position.z);
             float dis = Mathf.Abs(transform.parent.position.x - transform.position.x);
-            if (dis > xRange)
-            {
-                Debug.Log("poop");
-            }
+
         }
     }
 

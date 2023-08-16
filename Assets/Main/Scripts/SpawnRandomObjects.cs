@@ -84,15 +84,7 @@ public class SpawnRandomObjects : MonoBehaviour
             t++;
         }
 
-        //if (Vector3.Distance(transform.position, position) > 80)
-        //{
-        //    Debug.LogError("FINFIFNINF" + position + " " + t);
-        //}
 
-        //if (position.x > -2.5f)
-        //{
-        //    Debug.LogError("hihihi" + GetInstanceID());
-        //}
 
         return position;
     }

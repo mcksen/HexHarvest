@@ -15,7 +15,7 @@ public class EventDependentAudioPlayer : MonoBehaviour
     [SerializeField] private string buttonClick;
     public void Awake()
     {
-        Debug.Log("rrrrrr" + Time.frameCount);
+
         EventManager.instance.onButtonClickSound += HandleButtonClickSound;
         EventManager.instance.onScoreIncreased += HandleScoreIncreased;
         EventManager.instance.PlayGameAwake += HandlePlayGameAwake;
@@ -59,7 +59,7 @@ public class EventDependentAudioPlayer : MonoBehaviour
     }
     private void HandlePlayGameAwake()
     {
-        Debug.Log("jg");
+
         Play(menuTheme);
     }
 

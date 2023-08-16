@@ -80,7 +80,7 @@ public class SceneController : ScriptableObject
         LoadScene(audioScene, true);
         LoadScene(game, true);
         scenesToUnload.Add(awake);
-        Debug.Log("bbbbbbbbbbbbbbbbbbbb" + Time.frameCount);
+
 
 
     }
@@ -132,7 +132,7 @@ public class SceneController : ScriptableObject
         {
             scenesToUnload.Add(name);
         }
-        Debug.Log("pop" + Time.frameCount);
+
     }
 
     public void UnloadScenes()
